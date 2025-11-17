@@ -48,3 +48,16 @@ CheckUserExists проверяю что есть пользователь или
 
 UnitTest
 Program.cs
+
+#SQL
+
+SQL.PNG
+
+dotnet add package Microsoft.Data.Sqlite
+
+f.s
+CREATE TABLE ChatroomDB (
+IdChat INTEGER PRIMARY KEY AUTOINCREMENT, //только для главной позиции INTEGER для цифр а TEXT...
+User1Id INTEGER NOT NULL,
+User2Id INTEGER NOT NULL
+);

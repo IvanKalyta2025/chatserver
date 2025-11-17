@@ -21,10 +21,10 @@ namespace ChatServer.Api.Services
         public void AddMessageChat(Message msg)
         {
             if (string.IsNullOrWhiteSpace(msg.Text))
-                throw new Exception("Сообщение пустое");
+                throw new Exception("Message text cannot be empty");
 
             if (msg.Text.Length > 500)
-                throw new Exception("Сообщение слишком длинное");
+                throw new Exception("Message is too long! Maximum length is 500 characters.");
 
             _messages.Add(msg);
         }
