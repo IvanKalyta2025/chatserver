@@ -14,5 +14,6 @@ namespace ChatServer.Api.Services
             _messages.Add(message); //добавление сообщения в хранилище
         }
 
+
     }
 }

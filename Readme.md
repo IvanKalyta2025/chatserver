@@ -40,6 +40,9 @@ List \_messages and AddMessage (message)
     .UserService.cs
 
 List \_users and AddUser (user)
+GetUserByUsername поиск по имени
+GetUserByIfd поиск по ид что бы потом использовать в проперти
+CheckUserExists проверяю что есть пользователь или нет и использую bool b cпец меетод Any() который сам возвращает true или false
 
 UnitTest
 Program.cs
