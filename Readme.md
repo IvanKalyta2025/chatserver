@@ -16,12 +16,17 @@ User.cs
 .Username .Trim()
 
 Message.cs
-.Idchat
+.IdMassege
 .SenderId
 .ReceiverId
 .Text
 .Timeinchat
+.ChatId
 
-UnitTest**\_**
+Chatroom.cs
+.IdChat
+.User1
+.User2
 
+UnitTest
 Program.cs
