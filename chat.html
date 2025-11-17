@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Chat</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f1f1f1;
+        padding: 30px;
+      }
+
+      #chat-window {
+        width: 400px;
+        height: 400px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+      }
+
+      #input-area {
+        display: flex;
+        gap: 10px;
+      }
+
+      #msg {
+        flex: 1;
+        padding: 8px;
+      }
+
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      .message {
+        background: #e8e8e8;
+        margin: 5px 0;
+        padding: 6px 8px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Chat</h2>
+
+    <div id="chat-window"></div>
+
+    <div id="input-area">
+      <input type="text" id="msg" placeholder="Write a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+      let messages = []; // аналог List<Message>
+
+      function sendMessage() {
+        const input = document.getElementById("msg");
+        const text = input.value.trim();
+
+        if (text === "") return;
+
+        // создаем "Message" как в C#
+        const message = {
+          id: messages.length + 1,
+          senderId: 1,
+          text: text,
+          timestamp: Math.floor(Date.now() / 1000),
+        };
+
+        messages.push(message);
+
+        renderChat();
+        input.value = "";
+      }
+
+      function renderChat() {
+        const chat = document.getElementById("chat-window");
+        chat.innerHTML = "";
+
+        for (const m of messages) {
+          const div = document.createElement("div");
+          div.classList.add("message");
+          div.innerText = `${m.text}  (${m.timestamp})`;
+          chat.appendChild(div);
+        }
+
+        chat.scrollTop = chat.scrollHeight;
+      }
+    </script>
+  </body>
+</html>

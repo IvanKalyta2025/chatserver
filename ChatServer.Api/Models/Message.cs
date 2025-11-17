@@ -7,7 +7,7 @@ namespace ChatServer.Api.Models
 {
     public class Message
     {
-        public int Idchat { get; set; }
+        public int Idmessage { get; set; } //уникальный идентификатор сообщения
         public int SenderId { get; set; } //тот кто отправляет сообщение
         public int ReceiverId { get; set; } //тот кто получает сообщение
         public string? Text { get; set; }
