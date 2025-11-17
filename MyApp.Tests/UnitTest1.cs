@@ -1,10 +1,20 @@
-﻿namespace MyApp.Tests;
+﻿using ChatServer.Api.Models;
+using Xunit;
 
-public class UnitTest1
+namespace MyApp.Tests;
+
+public class UsersTests
 {
     [Fact]
-    public void Test1()
+    public void Username_SetWithWhitespace_TrimsWhitespace()
     {
+        // Arrange
+        var user = new Users();
 
+        // Act
+        user.Username = "   testuser   ";
+
+        // Assert
+        Assert.Equal("testuser", user.Username);
     }
 }
