@@ -27,6 +27,15 @@ namespace ChatServer.Api.Services
         public bool CheckUserExists(string username)
         {
             return _users.Any(u => u.Username == username); //проверка существования пользователя Any() сам проверяет на true/false
+
+            //вернуть ошибку если пользователь существует при регистрации
+        }
+        public void CheckUserExistsOrFail(string username)
+        {
+            if (_users.Any(u => u.Username == username))
+            {
+                throw new Exception("User already exists"); //генерация ошибки если пользователь существует
+            }
         }
 
     }
