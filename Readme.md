@@ -10,9 +10,18 @@ dotnet add MyApp.Tests reference ChatServer.Api/ChatServer.Api.csproj
 
 dotnet test
 
-User
+User.cs
 .Id
 .PasswordHash
 .Username .Trim()
 
-UnutTest
+Message.cs
+.Idchat
+.SenderId
+.ReceiverId
+.Text
+.Timeinchat
+
+UnitTest**\_**
+
+Program.cs

@@ -12,7 +12,7 @@ namespace ChatServer.Api
             var user = new Models.Users();
             user.Username = "   exampleUser   ";
             Console.WriteLine($"Trimmed Username: '{user.Username}'");
-
         }
     }
 }
+
